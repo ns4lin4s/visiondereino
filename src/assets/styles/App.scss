@@ -1,4 +1,174 @@
+
+
+// @media (min-width: 1281px) {
+  
+//   //CSS
+  
+// }
+
+@import url('https://fonts.googleapis.com/css?family=Chivo&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro');
+
 body { 
   margin: 0;
   background-color:red;
+}
+
+/* text animation */
+
+@keyframes animated-text{
+  from{width: 0;}
+  to{width: 472px;}
+}
+
+/* cursor animations */
+
+@keyframes animated-cursor{
+  from{border-right-color: rgba(0,255,0,.75);}
+  to{border-right-color: transparent;}
+}
+
+
+
+@media (max-width: 480px) {
+  
+  //CSS
+  body { 
+    margin: 0;
+    background-color:#3e3f3d;
+  }
+
+  
+
+  .container
+  {
+      display:grid;
+      grid-template-areas: 
+                          "header" 
+                          "entryContent"
+                          ;
+      grid-template-columns: 1fr;
+      grid-template-rows: 57px 838px 1fr 410px;
+      min-height: 300px;
+      width: 100%;
+
+      .header
+      {
+          position: sticky;
+          display: grid;
+          grid-area: header;
+          background-color: #1b273d;
+          grid-template-columns: 0.5fr 1fr 0.5fr;
+          
+          .logo{
+            
+            display: grid;
+            grid-template-columns: 0.2fr 1fr;
+            grid-template-rows: 1fr;
+
+            grid-column-start: 2;
+            
+            align-self: center;
+
+            h1 {
+              padding-left: 6px;
+              font-size: 22px;
+              color: white;
+              grid-column-start: 0;
+              font-family: 'Chivo', sans-serif;
+            }
+
+            .icon-logo{
+              grid-column-start: 1;
+              margin: 12px 0px 12px 0px;
+              text-align: center;
+
+              .fa-fire{
+                color: lightblue;
+                font-size: 2em;
+                
+              }
+            }
+            
+
+          }
+          
+      }
+
+      .entry-content{
+          display: grid;
+          grid-area: entryContent;
+          background-color: #000;
+          position: relative;
+
+          .opacity
+          {
+            position: absolute;
+            top: 0;
+            background: #000;
+            width: 100%;
+            height: 100%;
+            opacity: 0.4;
+          }
+          .banner{
+            background-image: url("https://envato.com/static/media/hero-image-4.3715f8a4.jpg");
+            background-attachment: fixed;
+            background-position: 30%;
+            background-size: cover;
+            background-color: #000;
+            
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 0.5fr 1fr 0.1fr;
+
+            .welcome{
+              z-index: 1;
+              grid-row-start: 2;
+              text-align: center;
+              color: #fff;
+
+              h1{
+                color: #fff;
+                font-family: Lato,sans-serif;
+                font-size: 2rem;
+                font-weight: 600;
+                line-height: 1.2;
+                margin: 0 0 20px;
+              }
+
+              
+
+                // span{
+                //   white-space: nowrap;
+                //   overflow: hidden;  
+                //   animation: animated-text 4s steps(29,end) 1s 1 normal both,
+                //     animated-cursor 600ms steps(29,end) infinite;
+                //   border-bottom: 4px solid #82b541;
+                //   color: rgba(255,255,255,.70);
+                //   border-right: solid 3px rgba(0,255,0,.75);
+                // }
+
+                p {
+                  font-family: Lato,sans-serif;
+                  font-weight: 600;
+                  line-height: 1.8;
+                  font-size:1.35rem;
+                  
+                  border-right: solid 3px rgba(0,255,0,.75);
+                  white-space: nowrap;
+                  overflow: hidden;    
+                  border-bottom: 4px solid #82b541;
+                }
+                
+                /* Animation */
+                p {
+                  animation: animated-text 4s steps(29,end) 1s 1 normal both,
+                             animated-cursor 600ms steps(29,end) infinite;
+                }
+                
+              
+            }
+          }
+      }
+  }
 }
